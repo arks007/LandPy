@@ -15,7 +15,7 @@ def fldrRegSelFunc(name, source, destination, cropParams):
     for filename in os.listdir(source):
         if filename.endswith('.tif') and (i > 3) and (i < 10) :
             img = regionSelector(os.path.join(source, filename), cropParams[0], cropParams[1], cropParams[2], cropParams[3]) 
-            cv2.imwrite(name + fileSuffixes[i], img)
+            cv2.imwrite(os.path.join(destination, name + fileSuffixes[i]), img)
         i = i + 1
 
 #a function that crops a specific region from a raw landsat band images 
