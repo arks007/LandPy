@@ -11,7 +11,7 @@ np.seterr(over='ignore')
 
 #creates a Normalized Difference Vegetation Index(NDVI) composite 
 #pixel values will range between -1 and 1
-def createNDVIComp(path):
+def createNDVIComps(path):
     for filename in os.listdir(path):
         if filename.endswith('band5.tif'):
             nir = cv2.imread(os.path.join(path, filename), 0)
@@ -23,7 +23,7 @@ def createNDVIComp(path):
 
 #creates a Normalized Difference Water Index(NDWI) composite 
 #pixel values will range between -1 and 1
-def createNDWIComp(path):
+def createNDWIComps(path):
     for filename in os.listdir(path):
         if filename.endswith('band5.tif'):
             nir = cv2.imread(os.path.join(path, filename), 0)
